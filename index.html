@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CYBER STRIKE TEAM</title>
     <style>
-        /* --- CSS কোড শুরু --- */
+        /* --- CSS কোড শুরু (সংশোধিত) --- */
         body {
             background-color: #000000;
             color: #00ff41;
             font-family: 'Consolas', 'Courier New', monospace;
+            /* Flexbox ব্যবহার করে কন্টেন্ট মাঝ বরাবর (উল্লম্ব ও অনুভূমিক) */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: center; /* অনুভূমিকভাবে মাঝখানে আনবে */
+            justify-content: center; /* উল্লম্বভাবে মাঝখানে আনবে */
             min-height: 100vh;
             margin: 0;
             padding: 20px;
@@ -44,11 +45,17 @@
             text-shadow: 0 0 15px #00ff41, 0 0 30px #00ff41;
             letter-spacing: 7px;
             color: #33ff66;
+            width: 100%; /* সম্পূর্ণ উইডথ জুড়ে থাকুক */
+            text-align: center; /* টেক্সট মাঝখানে থাকুক */
         }
 
         /* লোগো ও লোগো স্টাইল */
         .logo-area {
             margin-bottom: 20px;
+            /* লোগো ইমেজটিকে মাঝখানে আনার জন্য */
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
         .logo-image {
             width: 250px; /* লোগোর আকার */
@@ -71,6 +78,7 @@
             box-shadow: 0 0 30px #00ff41, inset 0 0 15px #00ff41;
             max-width: 450px;
             margin-bottom: 30px;
+            /* এটি যেহেতু body এর flex এর মধ্যে আছে, তাই এটিও মাঝখানে থাকবে */
         }
 
         .name {
@@ -182,7 +190,7 @@
             ctx.font = '10pt Consolas'; 
 
             y_pos.forEach((y, index) => {
-                // *** পরিবর্তন করা হয়েছে: র্যান্ডমলি 0 অথবা 1 নির্বাচন করা হচ্ছে ***
+                // র্যান্ডমলি 0 অথবা 1 নির্বাচন করা হচ্ছে
                 const text = Math.random() < 0.5 ? '0' : '1'; 
                 
                 // ক্যারেক্টারটি ড্র করুন (প্রতিটি ক্যারেক্টারের আকার 10pt)
