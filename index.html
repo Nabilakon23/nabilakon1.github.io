@@ -58,9 +58,14 @@
             width: 100%;
         }
         .logo-image {
-            width: 250px; /* লোগোর আকার */
-            height: auto;
+            width: 150px; /* লোগোর আকার */
+            height: 150px; /* গোল করার জন্য width-এর সমান হতে হবে */
             border: none; 
+            /* বৃত্তাকার করার জন্য এই লাইনটি আবশ্যক */
+            border-radius: 50%; 
+            /* ইমেজ যদি পুরোপুরি বর্গাকার না হয়, তবুও গোল দেখানোর জন্য */
+            object-fit: cover; 
+            
             box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 50px rgba(92, 0, 255, 0.4); 
             animation: pulse 1.5s infinite alternate;
         }
